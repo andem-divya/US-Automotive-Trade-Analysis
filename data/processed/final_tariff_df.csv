@@ -1,4 +1,4 @@
-standardized_country,Year,mfn_by_us_simple_avg,mfn_by_us_weight_avg,mfn_on_us_simple_avg,mfn_on_us_weighted_avg
+standardized_country,Year,mfn_by_us_simple_avg,mfn_by_us_weighted_avg,mfn_on_us_simple_avg,mfn_on_us_weighted_avg
 Afghanistan,2008,3.3124322807011395,1.639726897574773,7.680412371134021,5.483946133491533
 Afghanistan,2009,2.832640998189648,1.424914389643871,,
 Afghanistan,2010,2.4366337344623528,1.1497169201076451,,
