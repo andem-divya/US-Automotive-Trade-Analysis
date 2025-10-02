@@ -5,6 +5,7 @@ grid of line plots, animated sctater plot.
 """
 # import necessary libraries
 import math
+
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
@@ -108,6 +109,10 @@ def plot_scatter(
             "font": {"size": 15},
         },
     )
+
+    # Make sure xaxis_title is the same across all facets
+    fig.update_xaxes(title_text=x_label)
+
     return fig
 
 
@@ -170,7 +175,6 @@ def plot_dumbbell(
             )
         )
     # Add separate markers for Exports and Imports
-    
     # Add markers for Exports
     fig.add_trace(
         go.Scatter(
@@ -191,6 +195,11 @@ def plot_dumbbell(
             name=x2,
             marker=dict(color="pink", size=12),
         )
+    )
+
+    # update grid line
+    fig.update_yaxes(
+        showgrid=False,  # gridlines for y-axis
     )
 
     # updates labels, title, legend
