@@ -429,7 +429,6 @@ def plot_line_grid(df, x, y1, y2, group_col, groups, n_cols=3, title=None, **kwa
         # Update y-axis titles for this subplot
         fig.update_yaxes(title_text=y1, row=row, col=col, secondary_y=False)
         fig.update_yaxes(title_text=y2, row=row, col=col, secondary_y=True)
-    
         # Add a vertical dashed line at x=2.5
         fig.add_vline(x=2016, line_width=1, line_dash="dash", line_color="grey")
         fig.add_vline(x=2020, line_width=1, line_dash="dash", line_color="grey")
