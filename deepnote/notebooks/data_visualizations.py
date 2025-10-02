@@ -11,6 +11,47 @@ import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
+def plot_two_histograms(df, col1, col2, nbins=20):
+    """
+    Plot two histograms side by side
+
+    Parameters:
+    -----------
+    df : pandas.DataFrame
+        DataFrame containing the two columns to plot
+    col1 : str
+        Name of first column
+    col2 : str
+        Name of second column
+    nbins : int, optional
+        Number of bins for histograms (default=20)
+    log_scale : bool, optional
+        Whether to use log scale for x-axis (default=False)
+    """
+    fig = make_subplots(
+        rows=1, cols=2,
+        subplot_titles=(f'{col1} Histogram', f'{col2} Histogram')
+    )
+
+    # First histogram
+    fig.add_trace(
+        go.Histogram(x=df[col1], nbinsx=nbins, name=col1, marker_color='blue'),
+        row=1, col=1
+    )
+
+    # Second histogram
+    fig.add_trace(
+        go.Histogram(x=df[col2], nbinsx=nbins, name=col2, marker_color='green'),
+        row=1, col=2
+    )
+
+    # Update layout
+    fig.update_layout(
+        title_text=f'Histograms of {col1} and {col2}',
+        showlegend=False
+    )
+    return fig
+
 
 def plot_line(
     df, x, y, x_label=None, y_label=None, legend_label=None, title=None, **kwargs
@@ -388,6 +429,11 @@ def plot_line_grid(df, x, y1, y2, group_col, groups, n_cols=3, title=None, **kwa
         # Update y-axis titles for this subplot
         fig.update_yaxes(title_text=y1, row=row, col=col, secondary_y=False)
         fig.update_yaxes(title_text=y2, row=row, col=col, secondary_y=True)
+    
+        # Add a vertical dashed line at x=2.5
+        fig.add_vline(x=2016, line_width=1, line_dash="dash", line_color="grey")
+        fig.add_vline(x=2020, line_width=1, line_dash="dash", line_color="grey")
+
 
     # Add a single legend mapping colors to metric names (one entry each)
     # We add invisible traces with the desired legend names/colors
