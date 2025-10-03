@@ -38,7 +38,7 @@ Install required Python packages:
 
 `pip install -r requirements.txt`
 
-Alternatively, run `deepnote/notebooks/Init.ipynb`, which installs all dependencies automatically when working in Deepnote.
+Alternatively, run `Init.ipynb`, which installs all dependencies automatically when working in Deepnote.
 
 ---
 

@@ -33,23 +33,25 @@ def plot_two_histograms(df, col1, col2, nbins=20):
         subplot_titles=(f'{col1} Histogram', f'{col2} Histogram')
     )
 
-    # First histogram
+    # first histogram
     fig.add_trace(
         go.Histogram(x=df[col1], nbinsx=nbins, name=col1, marker_color='blue'),
         row=1, col=1
     )
 
-    # Second histogram
+    # second histogram
     fig.add_trace(
         go.Histogram(x=df[col2], nbinsx=nbins, name=col2, marker_color='green'),
         row=1, col=2
     )
 
-    # Update layout
-    fig.update_layout(
-        title_text=f'Histograms of {col1} and {col2}',
-        showlegend=False
-    )
+    # Set axis titles for each subplot
+    fig.update_xaxes(title_text=col1, row=1, col=1)
+    fig.update_yaxes(title_text='Count', row=1, col=1)
+
+    fig.update_xaxes(title_text=col2, row=1, col=2)
+    fig.update_yaxes(title_text='Count', row=1, col=2)
+
     return fig
 
 
@@ -509,3 +511,5 @@ def plot_animated_scatter(df, x_col, y_col, size_col, color_col, title, animatio
                 trace.hovertemplate = hover_template
 
     return fig
+
+
