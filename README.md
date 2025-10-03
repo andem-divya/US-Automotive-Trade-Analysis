@@ -32,12 +32,14 @@ The project follows a pipeline that transforms raw trade and economic data into 
 
 ### 1. Environment Setup
 
-Install required Python packages:
+*   Python 3.11
 
-`pip install -r requirements.txt`
+*   Install required Python packages:
 
-Alternatively, run `Init.ipynb`, which installs all dependencies automatically when working in Deepnote.
+    `pip install -r requirements.txt`
 
+    Alternatively, run `Init.ipynb`, which installs all dependencies automatically when working in Deepnote.
+    
 ---
 
 ### 2. Data Cleaning
