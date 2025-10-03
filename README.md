@@ -6,24 +6,22 @@ This project explores trends and patterns in U.S. automotive trade, focusing on 
 
 ## Project Structure
 ```
-.
+src/
 ├── data/
-│ ├── raw/ # Original unmodified datasets
-│ │ ├── primary/ # Core trade data (exports/imports)
-│ │ └── secondary/ # Economic indicators (GDP, tariffs)
-│ └── processed/ # Cleaned and combined datasets
+│   ├── raw/                  # Original unmodified datasets
+│   │   ├── primary/          # Core trade data (exports/imports)
+│   │   └── secondary/        # Economic indicators (GDP, tariffs)
+│   └── processed/            # Cleaned and combined datasets
 │
-├── deepnote/
-│ └── notebooks/
-│ ├── Init.ipynb # Environment setup (dependencies)
-│ ├── data_cleaning_primary.ipynb # Cleaning primary trade data
-│ ├── data_cleaning_secondary.ipynb # Cleaning GDP and tariff data
-│ ├── combine_primary_secondary.ipynb # Merge cleaned datasets
-│ ├── data_analysis.ipynb # Exploratory Data Analysis (EDA)
-│ └── data_visualizations.py # Reusable visualization functions
+├── Init.ipynb                # Environment setup (dependencies)
+├── data_cleaning_primary.ipynb      # Cleaning primary trade data
+├── data_cleaning_secondary.ipynb    # Cleaning GDP and tariff data
+├── combine_primary_secondary.ipynb  # Merge cleaned datasets
+├── data_analysis.ipynb       # Exploratory Data Analysis (EDA)
+├── data_visualizations.py    # Reusable visualization functions
 │
-├── requirements.txt # Python dependencies
-└── README.md # Project documentation
+├── requirements.txt          # Python dependencies
+└── README.md                 # Project documentation
 ```
 
 ---
